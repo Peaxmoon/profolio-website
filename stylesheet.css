@@ -75,13 +75,13 @@
         .navbar .menu a {
             font-size: 18px;
             font-weight: 500;
-            color: #0E2431;
+            color: #000000;
             padding: 6px 0;
             transition: all 0.4s ease;
         }
         
         .navbar .menu a:hover {
-            color: #183153;
+            color: #000000;
             font-size: 20px;
         }
         
