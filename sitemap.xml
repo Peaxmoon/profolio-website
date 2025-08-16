@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- Home Page - Highest Priority -->
+    <url>
+        <loc>https://sujjalkhadka.com.np/</loc>
+        <lastmod>2025-01-27T10:00:00+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Projects Page -->
+    <url>
+        <loc>https://sujjalkhadka.com.np/projects.html</loc>
+        <lastmod>2025-01-27T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- About Section -->
+    <url>
+        <loc>https://sujjalkhadka.com.np/#about</loc>
+        <lastmod>2025-01-27T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Skills Section -->
+    <url>
+        <loc>https://sujjalkhadka.com.np/#skills</loc>
+        <lastmod>2025-01-27T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Services Section -->
+    <url>
+        <loc>https://sujjalkhadka.com.np/#services</loc>
+        <lastmod>2025-01-27T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Contact Section -->
+    <url>
+        <loc>https://sujjalkhadka.com.np/#contact</loc>
+        <lastmod>2025-01-27T10:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+</urlset>
