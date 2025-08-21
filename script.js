@@ -2,7 +2,7 @@
 function updateFooterYear() {
     const currentYear = new Date().getFullYear();
     const footerYearElement = document.querySelector('footer .text span');
-    
+
     if (footerYearElement) {
         // Replace the year in the footer text
         const footerText = footerYearElement.innerHTML;
@@ -15,20 +15,20 @@ function updateFooterYear() {
 function updateExperience() {
     const startDate = new Date('2023-01-01'); // Starting from 2023
     const currentDate = new Date();
-    
+
     // Calculate total months difference
     const yearDiff = currentDate.getFullYear() - startDate.getFullYear();
     const monthDiff = currentDate.getMonth() - startDate.getMonth();
     const totalMonths = yearDiff * 12 + monthDiff;
-    
+
     const experienceElement = document.querySelector('.experience .num');
     const experienceTextElement = document.querySelector('.experience .exp');
-    
+
     if (experienceElement && experienceTextElement) {
         if (totalMonths >= 12) {
             const years = Math.floor(totalMonths / 12);
             const remainingMonths = totalMonths % 12;
-            
+
             if (remainingMonths === 0) {
                 experienceElement.textContent = years;
                 experienceTextElement.innerHTML = `Year${years > 1 ? 's' : ''} Of<br> Experience`;
@@ -44,83 +44,123 @@ function updateExperience() {
 }
 
 // Update both footer year and experience on page load
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     updateFooterYear();
     updateExperience();
     
+    // Initialize lazy loading
+    if ('IntersectionObserver' in window) {
+        lazyLoadImages();
+    }
+
     // Update experience every month (more efficient)
     setInterval(updateExperience, 30 * 24 * 60 * 60 * 1000); // Check every 30 days
 });
 
-// Sticky Navigation Menu JS Code
+// Performance-optimized scroll handling with throttling
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+// Sticky Navigation Menu JS Code (Optimized)
 let nav = document.querySelector("nav");
 let scrollBtn = document.querySelector(".scroll-button a");
 let val;
 
-window.onscroll = function() {
-  if(document.documentElement.scrollTop > 20){
-    nav.classList.add("sticky");
-    scrollBtn.style.display = "block";
-    scrollBtn.style.opacity = "1";
-  }else{
-    nav.classList.remove("sticky");
-    scrollBtn.style.opacity = "0";
-    setTimeout(() => {
-      if(document.documentElement.scrollTop <= 20) {
-        scrollBtn.style.display = "none";
-      }
-    }, 300);
-  }
-}
+// Throttled scroll handler for better performance (60fps)
+window.onscroll = throttle(function () {
+    if (document.documentElement.scrollTop > 20) {
+        nav.classList.add("sticky");
+        scrollBtn.style.display = "block";
+        scrollBtn.style.opacity = "1";
+    } else {
+        nav.classList.remove("sticky");
+        scrollBtn.style.opacity = "0";
+        setTimeout(() => {
+            if (document.documentElement.scrollTop <= 20) {
+                scrollBtn.style.display = "none";
+            }
+        }, 300);
+    }
+}, 16); // 16ms = 60fps
 
-// Smooth scroll for navigation links
+// Smooth scroll for navigation links (Optimized)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            // Use requestAnimationFrame for smoother scrolling
+            requestAnimationFrame(() => {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             });
         }
     });
 });
+
+// Lazy loading for images
+function lazyLoadImages() {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+}
 
 // Side NavIgation Menu JS Code
 let body = document.querySelector("body");
 let navBar = document.querySelector(".navbar");
 let menuBtn = document.querySelector(".menu-btn");
 let cancelBtn = document.querySelector(".cancel-btn");
-menuBtn.onclick = function(){
-  navBar.classList.add("active");
-  menuBtn.style.opacity = "0";
-  menuBtn.style.pointerEvents = "none";
-  body.style.overflow = "hidden";
-  scrollBtn.style.pointerEvents = "none";
+menuBtn.onclick = function () {
+    navBar.classList.add("active");
+    menuBtn.style.opacity = "0";
+    menuBtn.style.pointerEvents = "none";
+    body.style.overflow = "hidden";
+    scrollBtn.style.pointerEvents = "none";
 }
-cancelBtn.onclick = function(){
-  navBar.classList.remove("active");
-  menuBtn.style.opacity = "1";
-  menuBtn.style.pointerEvents = "auto";
-  body.style.overflow = "auto";
-  scrollBtn.style.pointerEvents = "auto";
-}
-
-// Side Navigation Bar Close While We Click On Navigation Links
-let navLinks = document.querySelectorAll(".menu li a");
-for (var i = 0; i < navLinks.length; i++) {
-  navLinks[i].addEventListener("click" , function() {
+cancelBtn.onclick = function () {
     navBar.classList.remove("active");
     menuBtn.style.opacity = "1";
     menuBtn.style.pointerEvents = "auto";
     body.style.overflow = "auto";
     scrollBtn.style.pointerEvents = "auto";
-  });
+}
+
+// Side Navigation Bar Close While We Click On Navigation Links
+let navLinks = document.querySelectorAll(".menu li a");
+for (var i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener("click", function () {
+        navBar.classList.remove("active");
+        menuBtn.style.opacity = "1";
+        menuBtn.style.pointerEvents = "auto";
+        body.style.overflow = "auto";
+        scrollBtn.style.pointerEvents = "auto";
+    });
 }
 
 // Add loading animation for skills
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const skillBoxes = document.querySelectorAll('.skills-details .box');
     skillBoxes.forEach((box, index) => {
         setTimeout(() => {
@@ -131,18 +171,18 @@ window.addEventListener('load', function() {
 });
 
 // Add smooth animations for contact elements
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const infoItems = document.querySelectorAll('.info-item');
     const contactForm = document.querySelector('.contact-form');
- 
-    contactForm.style.transform = 'translateY(0)';   
+
+    contactForm.style.transform = 'translateY(0)';
     infoItems.forEach((item, index) => {
         setTimeout(() => {
             item.style.opacity = '1';
             item.style.transform = 'translateY(0)';
         }, (index + 1) * 200);
     });
-    
+
     setTimeout(() => {
         contactForm.style.opacity = '1';
         contactForm.style.transform = 'translateY(0)';
@@ -150,65 +190,65 @@ window.addEventListener('load', function() {
 });
 
 // Add form interaction effects
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
     const submitBtn = document.querySelector('.submit-btn');
     const contactForm = document.getElementById('contactForm');
-    
+
     // Add focus effects to form inputs
     formInputs.forEach(input => {
-        input.addEventListener('focus', function() {
+        input.addEventListener('focus', function () {
             this.parentElement.style.transform = 'translateY(-2px)';
         });
-        
-        input.addEventListener('blur', function() {
+
+        input.addEventListener('blur', function () {
             this.parentElement.style.transform = 'translateY(0)';
         });
     });
-    
+
     // Enhanced form submission handling
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
             const staticSubject = 'Contacting Sujjal Khadka'; // Static subject
-            
+
             // Basic validation
             if (!name || !email || !message) {
                 alert('Please fill in all fields');
                 return;
             }
-            
+
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 alert('Please enter a valid email address');
                 return;
             }
-            
+
             // Create mailto link with static subject
             const mailtoLink = `mailto:sujjalboi09@gmail.com?subject=${encodeURIComponent(staticSubject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-            
+
             // Add loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening Email...';
             submitBtn.style.background = 'linear-gradient(135deg, #64748b, #475569)';
             submitBtn.disabled = true;
-            
+
             // Open email client using window.open to avoid hash navigation issues
             setTimeout(() => {
                 try {
                     // Try to open the mailto link
                     const emailWindow = window.open(mailtoLink, '_blank');
-                    
+
                     // Check if the email client opened successfully
                     if (emailWindow) {
                         // Email client opened successfully
                         submitBtn.innerHTML = '<i class="fas fa-check"></i> Email Opened!';
                         submitBtn.style.background = 'linear-gradient(135deg, #059669, #047857)';
-                        
+
                         // Clear form
                         contactForm.reset();
                     } else {
@@ -225,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitBtn.style.background = 'linear-gradient(135deg, #059669, #047857)';
                     contactForm.reset();
                 }
-                
+
                 // Reset button after 3 seconds
                 setTimeout(() => {
                     submitBtn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
@@ -239,43 +279,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Add hover effects for info items
 document.querySelectorAll('.info-item').forEach(item => {
-    item.addEventListener('mouseenter', function() {
+    item.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-5px) scale(1.02)';
     });
-    
-    item.addEventListener('mouseleave', function() {
+
+    item.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0) scale(1)';
     });
 });
 
 // Add hover effects for social links
 document.querySelectorAll('.social-link').forEach(link => {
-    link.addEventListener('mouseenter', function() {
+    link.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-5px) scale(1.02)';
     });
-    
-    link.addEventListener('mouseleave', function() {
+
+    link.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0) scale(1)';
     });
 });
 
-// Add scroll reveal animation
-window.addEventListener('scroll', function() {
+// Throttle scroll event for section reveal
+let lastScroll = 0;
+window.addEventListener('scroll', function revealSections(e) {
+    const now = Date.now();
+    if (now - lastScroll < 100) return; // throttle to every 100ms
+    lastScroll = now;
+
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
+        if (section.style.opacity === '1') return; // already visible, skip
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         const scrollY = window.scrollY;
-        
+
         if (scrollY > sectionTop - window.innerHeight * 0.75) {
             section.style.opacity = '1';
             section.style.transform = 'translateY(0)';
         }
     });
-});
+}, { passive: true });
 
 // Add smooth animations for project cards
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach((card, index) => {
         setTimeout(() => {
@@ -287,22 +333,41 @@ window.addEventListener('load', function() {
 
 // Add hover effects for project links
 document.querySelectorAll('.project-link').forEach(link => {
-    link.addEventListener('mouseenter', function() {
+    link.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-3px) scale(1.02)';
     });
-    
-    link.addEventListener('mouseleave', function() {
+
+    link.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0) scale(1)';
     });
 });
 
 // Add hover effects for tech tags
 document.querySelectorAll('.tech-tag').forEach(tag => {
-    tag.addEventListener('mouseenter', function() {
+    tag.addEventListener('mouseenter', function () {
         this.style.transform = 'translateY(-2px) scale(1.05)';
     });
-    
-    tag.addEventListener('mouseleave', function() {
+
+    tag.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0) scale(1)';
     });
+});
+
+// Auto-highlight active navbar link based on URL
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const currentPath = window.location.pathname;
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // Highlight Projects on projects page, otherwise default to Home
+    if (currentPath.endsWith('projects.html')) {
+        const projectsLink = document.getElementById('projects-link');
+        if (projectsLink) projectsLink.classList.add('active');
+    } else {
+        const homeLink = document.getElementById('home-link');
+        if (homeLink) homeLink.classList.add('active');
+    }
 });

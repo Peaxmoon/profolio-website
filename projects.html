@@ -1,51 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- Primary Meta Tags -->
     <title>Projects | Sujjal Khadka Portfolio</title>
     <meta name="title" content="Projects | Sujjal Khadka Portfolio">
-    <meta name="description" content="Explore my projects in Web Development, Mobile App Development, UI/UX Design, and Cloud Services. View live demos and source code.">
-    <meta name="keywords" content="Sujjal Khadka Projects, Web Development Projects, Mobile App Projects, UI/UX Design Projects, Cloud Services Projects, Portfolio Projects">
+    <meta name="description"
+        content="Explore my projects in Web Development, Mobile App Development, UI/UX Design, and Cloud Services. View live demos and source code.">
+    <meta name="keywords"
+        content="Sujjal Khadka Projects, Web Development Projects, Mobile App Projects, UI/UX Design Projects, Cloud Services Projects, Portfolio Projects">
     <meta name="author" content="Sujjal Khadka">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sujjalkhadka.com.np/projects.html">
     <meta property="og:title" content="Projects | Sujjal Khadka Portfolio">
-    <meta property="og:description" content="Explore my projects in Web Development, Mobile App Development, UI/UX Design, and Cloud Services.">
+    <meta property="og:description"
+        content="Explore my projects in Web Development, Mobile App Development, UI/UX Design, and Cloud Services.">
     <meta property="og:image" content="https://sujjalkhadka.com.np/images/projects-preview.jpg">
     <meta property="og:site_name" content="Sujjal Khadka Portfolio">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sujjalkhadka.com.np/projects.html">
     <meta property="twitter:title" content="Projects | Sujjal Khadka Portfolio">
-    <meta property="twitter:description" content="Explore my projects in Web Development, Mobile App Development, UI/UX Design, and Cloud Services.">
+    <meta property="twitter:description"
+        content="Explore my projects in Web Development, Mobile App Development, UI/UX Design, and Cloud Services.">
     <meta property="twitter:image" content="https://sujjalkhadka.com.np/images/projects-preview.jpg">
     <meta name="twitter:creator" content="@SujjalKhadka">
-    
+
     <!-- Additional SEO Meta Tags -->
     <meta name="theme-color" content="#183153">
-    <meta name="canonical" content="https://sujjalkhadka.com.np/projects.html">
-    
+    <link rel="canonical" href="https://sujjalkhadka.com.np/projects.html">
+
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    
-    <!-- Preconnect to external domains for performance -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Critical CSS Inlining for above-the-fold content -->
+    <style>
+        /* Critical styles for immediate rendering */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fefefe 0%, #f8f6f1 50%, #f5f3ed 100%);
+            background-attachment: fixed;
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            display: none;
+        }
+
+        .scroll-button a {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background: #183153;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        /* Loading animation */
+        .loading {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .loaded {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="stylesheet.css" as="style">
+
+    <!-- Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Load fonts with display=swap for better performance -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500&display=swap">
+    </noscript>
+
+    <!-- Load Font Awesome with optimization -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    </noscript>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="stylesheet.css">
+    </noscript>
+
     <!-- Structured Data for Projects Page -->
     <script type="application/ld+json">
     {
@@ -88,20 +165,26 @@
     }
     </script>
 </head>
-<body>
+
+<body class="loading">
     <div class="scroll-button">
         <a href="#home"><i class="fas fa-arrow-up"></i></a>
     </div>
     <nav>
         <div class="navbar">
-            <div class="logo"><a href="index.html">Sujjal</a></div>
+            <div class="logo">
+                <a href="index.html">
+                    Sujjal
+                </a>
+            </div>
             <ul class="menu">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html" class="nav-link" id="home-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link" id="about-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link" id="skills-link">Skills</a></li>
+                <li><a href="index.html#services" class="nav-link" id="services-link">Services</a></li>
+                <li><a href="#projects" class="nav-link active" id="projects-link">Projects <i
+                            class="fas fa-external-link-alt"></i></a></li>
+                <li><a href="index.html#contact" class="nav-link" id="contact-link">Contact</a></li>
                 <div class="cancel-btn">
                     <i class="fas fa-times"></i>
                 </div>
@@ -130,7 +213,8 @@
                     </div>
                     <div class="project-content">
                         <h3>Portfolio Website</h3>
-                        <p>A modern, responsive portfolio website built with HTML, CSS, and JavaScript. Features glass-morphism design, smooth animations, and contact form integration.</p>
+                        <p>A modern, responsive portfolio website built with HTML, CSS, and JavaScript. Features
+                            glass-morphism design, smooth animations, and contact form integration.</p>
                         <div class="project-tech">
                             <span class="tech-tag">HTML</span>
                             <span class="tech-tag">CSS</span>
@@ -149,7 +233,8 @@
                     </div>
                     <div class="project-content">
                         <h3>Mobile App Development</h3>
-                        <p>Cross-platform mobile application developed using modern frameworks. Features intuitive UI/UX design and seamless user experience across devices.</p>
+                        <p>Cross-platform mobile application developed using modern frameworks. Features intuitive UI/UX
+                            design and seamless user experience across devices.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Flutter</span>
                             <span class="tech-tag">Dart</span>
@@ -168,7 +253,8 @@
                     </div>
                     <div class="project-content">
                         <h3>Cloud-Based Solution</h3>
-                        <p>Scalable cloud infrastructure implementation with automated deployment and monitoring. Ensures high availability and performance optimization.</p>
+                        <p>Scalable cloud infrastructure implementation with automated deployment and monitoring.
+                            Ensures high availability and performance optimization.</p>
                         <div class="project-tech">
                             <span class="tech-tag">AWS</span>
                             <span class="tech-tag">Docker</span>
@@ -187,7 +273,8 @@
                     </div>
                     <div class="project-content">
                         <h3>UI/UX Design System</h3>
-                        <p>Comprehensive design system with reusable components and design guidelines. Ensures consistency across all digital products and platforms.</p>
+                        <p>Comprehensive design system with reusable components and design guidelines. Ensures
+                            consistency across all digital products and platforms.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Figma</span>
                             <span class="tech-tag">Adobe XD</span>
@@ -207,9 +294,40 @@
     <footer>
         <div class="text">
             <span><a href="#">sujjalkhadka.com.np</a> | &#169; 2025 All
-                    Right Reserve</span>
+                Right Reserve</span>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <!-- Main JavaScript with defer for better performance -->
+    <script src="script.js" defer></script>
+
+    <!-- Loading optimization script -->
+    <script>
+        // Remove loading class when page is fully loaded
+        window.addEventListener('load', function () {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        });
+
+        // Fallback for older browsers
+        if (document.readyState === 'complete') {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        }
+
+
+        // Register Service Worker for caching and offline functionality
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
 </body>
+
 </html>

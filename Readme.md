@@ -165,6 +165,8 @@ The website uses a consistent color scheme defined in CSS variables:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+<br>
+<span style="font-size:4px; color:#eaeaea">or maybe for your own portfolio hehe</span>
 
 ## 📄 License
 
@@ -182,8 +184,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Font Awesome for icons
 - Google Fonts for typography
-<!-- - CSS Grid and Flexbox for layouts
-- Modern CSS features for animations -->
+- Plain CSS Grid and Flexbox for layouts
 
 ---
 
