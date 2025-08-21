@@ -76,8 +76,9 @@ let nav = document.querySelector("nav");
 let scrollBtn = document.querySelector(".scroll-button a");
 let val;
 
-// Throttled scroll handler for better performance (60fps)
-window.onscroll = throttle(function () {
+// Throttled sticky nav with passive scroll
+window.removeEventListener && window.removeEventListener('scroll', () => {});
+window.addEventListener('scroll', throttle(function () {
     if (document.documentElement.scrollTop > 20) {
         nav.classList.add("sticky");
         scrollBtn.style.display = "block";
@@ -91,7 +92,7 @@ window.onscroll = throttle(function () {
             }
         }, 300);
     }
-}, 16); // 16ms = 60fps
+}, 16), { passive: true });
 
 // Smooth scroll for navigation links (Optimized)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -230,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Create mailto link with static subject
-            const mailtoLink = `mailto:sujjalboi09@gmail.com?subject=${encodeURIComponent(staticSubject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            const mailtoLink = `mailto:info@sujjalkhadka.com.np?subject=${encodeURIComponent(staticSubject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
 
             // Add loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening Email...';
@@ -371,3 +372,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (homeLink) homeLink.classList.add('active');
     }
 });
+
+// Defer non-critical work to idle time
+if (window.requestIdleCallback) {
+    requestIdleCallback(() => {
+      // analytics.init();
+      // preload non-critical images
+      ['favicon.ico'].forEach(src => { const img = new Image(); img.src = src; });
+      // light UI effects that don’t affect layout
+    });
+  }

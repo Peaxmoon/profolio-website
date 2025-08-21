@@ -73,12 +73,22 @@
             padding: 20px 0;
             z-index: 998;
             transition: transform 0.3s ease, backdrop-filter 0.3s ease;
-            font-family: 'Ubuntu', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             will-change: transform, backdrop-filter;
+        }
+
+        /* Mobile performance tweaks */
+        @media (max-width: 768px) {
+            body { background-attachment: scroll; }
+            nav {
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+                background: rgba(255, 255, 255, 0.9);
+            }
         }
         
         nav.sticky {
@@ -215,7 +225,7 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            font-family: 'Ubuntu', sans-serif;
+            font-family: 'Poppins', sans-serif;
             position: relative;
         }
 

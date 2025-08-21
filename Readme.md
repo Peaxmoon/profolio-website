@@ -35,7 +35,7 @@ btw this is just for shell 🤓
 - **CSS3**: Advanced styling with Flexbox and Grid
 - **JavaScript**: Interactive functionality and animations
 - **Font Awesome**: Professional icons
-- **Google Fonts**: Typography (Poppins & Ubuntu)
+- **Google Fonts**: Typography (Poppins)
 
 ## 📋 Sections
 
