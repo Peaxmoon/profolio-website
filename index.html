@@ -7,7 +7,12 @@
 
     <!-- Primary Meta Tags -->
     <title>Sujjal Khadka | Portfolio | Peaxmoon | Web Developer | BCA Student Projects | Nepal</title>
-    <link rel="icon" type="image/x-icon" href="https://sujjalkhadka.com.np/favicon.ico">
+    <!-- <link rel="icon" type="image/x-icon" href="https://sujjalkhadka.com.np/favicon.ico"> -->
+    <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon"> -->
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+
+    
     <meta name="title" content="Sujjal Khadka | Web Developer Portfolio | BCA Student Projects | Nepal">
     <meta name="description"
         content="Explore the portfolio of Sujjal Khadka, a BCA student and web developer from Nepal specializing in HTML, CSS, JavaScript, Web Development, Mobile Apps, UI/UX Design, and Cloud Services. View projects and get in touch for collaborations.">
@@ -86,14 +91,14 @@
             text-decoration: none;
             scroll-behavior: smooth;
         }
-        
+
         body {
             background: linear-gradient(135deg, #fefefe 0%, #f8f6f1 50%, #f5f3ed 100%);
             background-attachment: fixed;
             position: relative;
             font-family: 'Poppins', sans-serif;
         }
-        
+
         nav {
             position: fixed;
             top: 2px;
@@ -107,7 +112,7 @@
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .navbar {
             width: 90%;
             display: flex;
@@ -115,7 +120,7 @@
             align-items: center;
             margin: auto;
         }
-        
+
         .logo a {
             font-weight: 500;
             font-size: 35px;
@@ -124,36 +129,36 @@
             align-items: center;
             text-decoration: none;
         }
-        
+
         .logo a img {
             width: 35px;
             height: 35px;
             margin-right: 10px;
             transition: transform 0.3s ease;
         }
-        
+
         .nav-links {
             display: flex;
             align-items: center;
         }
-        
+
         .nav-links li {
             list-style: none;
             margin: 0 20px;
         }
-        
+
         .nav-links li a {
             color: #183153;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
         }
-        
+
         .menu-btn {
             display: none;
             cursor: pointer;
         }
-        
+
         .scroll-button {
             position: fixed;
             bottom: 20px;
@@ -161,7 +166,7 @@
             z-index: 999;
             display: none;
         }
-        
+
         .scroll-button a {
             display: block;
             width: 50px;
@@ -174,13 +179,13 @@
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
+
         /* Loading animation */
         .loading {
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
+
         .loaded {
             opacity: 1;
         }
@@ -191,32 +196,46 @@
             display: grid;
             place-items: center;
         }
-        .home .text { min-height: 180px; }
-        .text-two { line-height: 1.1; }
+
+        .home .text {
+            min-height: 180px;
+        }
+
+        .text-two {
+            line-height: 1.1;
+        }
     </style>
 
     <!-- Preload critical resources -->
     <link rel="preload" href="stylesheet.css" as="style">
     <link rel="preload" href="script.js" as="script">
-    
+
     <!-- Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    
+
     <!-- Load fonts with display=swap for better performance -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"></noscript>
-    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    </noscript>
+
     <!-- Load Font Awesome with optimization -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    </noscript>
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="stylesheet.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="stylesheet.css"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="stylesheet.css">
+    </noscript>
 
     <!-- Enhanced Structured Data for Google -->
     <script type="application/ld+json">
@@ -399,20 +418,20 @@
     <section class="about" id="about">
         <div class="content">
             <div class="title"><span>About Me</span></div>
-                <div class="right">
-                    <div class="topic">Developing Is My Passion</div>
-                    <p>Hi! I am Sujjal Khadka from Sunsari, Nepal. I have recently completed my plus 2 education in
-                        science and am
-                        currently studying for my Bachelor's degree in Computer Application (BCA). Alongside my studies,
-                        I have been learning about java cross-platform
-                        application development. I am passionate about technology and have been working on a project
-                        related to app development using java. I am excited to continue learning and growing in this
-                        field and hope to make a positive impact
-                        in the world of technology.</p>
-                    <div class="button">
-                        <a href="#about"><button>My Details</button></a>
-                    </div>
+            <div class="right">
+                <div class="topic">Developing Is My Passion</div>
+                <p>Hi! I am Sujjal Khadka from Sunsari, Nepal. I have recently completed my plus 2 education in
+                    science and am
+                    currently studying for my Bachelor's degree in Computer Application (BCA). Alongside my studies,
+                    I have been learning about java cross-platform
+                    application development. I am passionate about technology and have been working on a project
+                    related to app development using java. I am excited to continue learning and growing in this
+                    field and hope to make a positive impact
+                    in the world of technology.</p>
+                <div class="button">
+                    <a href="#about"><button>My Details</button></a>
                 </div>
+            </div>
         </div>
     </section>
     <!-- My Skill Section Start -->
@@ -559,22 +578,22 @@
     </footer>
     <!-- Main JavaScript with defer for better performance -->
     <script src="script.js" defer></script>
-    
+
     <!-- Loading optimization script -->
     <script>
         // Remove loading class when page is fully loaded
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             document.body.classList.remove('loading');
             document.body.classList.add('loaded');
         });
-        
+
         // Fallback for older browsers
         if (document.readyState === 'complete') {
             document.body.classList.remove('loading');
             document.body.classList.add('loaded');
         }
-        
-        
+
+
         // Register Service Worker for caching and offline functionality
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {

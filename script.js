@@ -378,7 +378,7 @@ if (window.requestIdleCallback) {
     requestIdleCallback(() => {
       // analytics.init();
       // preload non-critical images
-      ['favicon.ico'].forEach(src => { const img = new Image(); img.src = src; });
+      ['favicon.png'].forEach(src => { const img = new Image(); img.src = src; });
       // light UI effects that don’t affect layout
     });
   }

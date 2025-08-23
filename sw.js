@@ -5,6 +5,7 @@ const ASSETS_TO_CACHE = [
   '/projects.html',
   '/stylesheet.css',
   '/script.js',
+  '/favicon.png',  
   '/favicon.ico',
   '/site.webmanifest'
 ];

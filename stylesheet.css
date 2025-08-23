@@ -87,7 +87,6 @@
             nav {
                 backdrop-filter: none;
                 -webkit-backdrop-filter: none;
-                background: rgba(255, 255, 255, 0.9);
             }
         }
         
@@ -1713,6 +1712,10 @@
         transition: right 0.3s ease;
         z-index: 999;
     }
+
+    nav.sticky {
+        padding: 14px 0;
+    }
     
     .nav-links.active {
         right: 0;
@@ -1826,6 +1829,11 @@
         width: 24px;
         height: 24px;
     }
+
+    nav.sticky {
+        padding: 12px 0;
+    }
+    
     
     .section-title {
         font-size: 28px;
