@@ -11,8 +11,18 @@
     <title>Sujjal Khadka | Portfolio | Peaxmoon | Web Developer | BCA Student Projects | Nepal</title>
     <!-- <link rel="icon" type="image/x-icon" href="https://sujjalkhadka.com.np/favicon.ico"> -->
     <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon"> -->
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="/favicon.png">
+    <!-- <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/favicon.png"> -->
+    
+    <!-- Favicon Configuration -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png">
+    <link rel="mask-icon" href="/favicon.svg" color="#183153">
+    <meta name="msapplication-TileImage" content="/favicon-144x144.png">
+    <meta name="msapplication-TileColor" content="#183153">
 
     
     <meta name="title" content="Sujjal Khadka | Web Developer Portfolio | BCA Student Projects | Nepal">
@@ -68,6 +78,30 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="format-detection" content="telephone=no">
     <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Logo Schema for Search Results -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://sujjalkhadka.com.np/#organization",
+        "url": "https://sujjalkhadka.com.np",
+        "name": "Sujjal Khadka Portfolio",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://sujjalkhadka.com.np/favicon-512x512.png",
+            "width": 512,
+            "height": 512,
+            "caption": "Sujjal Khadka Portfolio Logo"
+        },
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://sujjalkhadka.com.np/favicon-512x512.png",
+            "width": 512,
+            "height": 512
+        }
+    }
+    </script>
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://sujjalkhadka.com.np/">
@@ -220,18 +254,40 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
     <!-- Load fonts with display=swap for better performance -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" as="style"
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?@" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?@">
     </noscript>
 
     <!-- Load Font Awesome with optimization -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    </noscript>
+    <style>
+        /* Font Awesome optimization */
+        @font-face {
+            font-family: 'Font Awesome 5 Free';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/webfonts/fa-solid-900.woff2') format('woff2');
+        }
+        @font-face {
+            font-family: 'Font Awesome 5 Brands';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/webfonts/fa-brands-400.woff2') format('woff2');
+        }
+        .fas {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
+        .fab {
+            font-family: 'Font Awesome 5 Brands';
+            font-weight: 400;
+        }
+    </style>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="stylesheet.css" media="print" onload="this.media='all'">
@@ -331,6 +387,18 @@
         },
         "inLanguage": "en",
         "isAccessibleForFree": true
+    }
+    </script>
+
+    <!-- Organization Schema for Logo -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://sujjalkhadka.com.np",
+        "logo": "https://sujjalkhadka.com.np/favicon-512x512.png",
+        "name": "Sujjal Khadka Portfolio",
+        "image": "https://sujjalkhadka.com.np/favicon-512x512.png"
     }
     </script>
 
@@ -609,6 +677,9 @@
             });
         }
     </script>
+    
+    <!-- Cloudflare email protection script loaded last with defer -->
+    <script defer src="/cdn-cgi/scripts/cloudflare-static/email-decode.min.js"></script>
 </body>
 
 </html>
