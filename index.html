@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
     <!-- Primary Meta Tags -->
     <title>Sujjal Khadka | Portfolio | Peaxmoon | Web Developer | BCA Student Projects | Nepal</title>
@@ -599,10 +601,10 @@
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
                     .then(registration => {
-                        console.log('SW registered: ', registration);
+                        // console.log('SW registered: ', registration);
                     })
                     .catch(registrationError => {
-                        console.log('SW registration failed: ', registrationError);
+                        // console.log('SW registration failed: ', registrationError);
                     });
             });
         }
