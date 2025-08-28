@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /projects.html
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
 Sitemap: https://sujjalkhadka.com.np/sitemap.xml

@@ -2,11 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-
     <!-- Primary Meta Tags -->
     <title>Sujjal Khadka | Portfolio | Peaxmoon | Web Developer | BCA Student Projects | Nepal</title>
     <!-- <link rel="icon" type="image/x-icon" href="https://sujjalkhadka.com.np/favicon.ico"> -->
@@ -78,6 +73,30 @@
     <meta name="msapplication-config" content="/browserconfig.xml">
     <meta name="format-detection" content="telephone=no">
     <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Remove noindex and add proper indexing -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Add missing charset declaration at the top -->
+    <meta charset="UTF-8">
+    
+    <!-- Add mobile viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Add language -->
+    <meta http-equiv="content-language" content="en">
+    
+    <!-- Add text compression headers -->
+    <meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+    
+    <!-- Add security headers -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    
+    <!-- Add mobile theme color -->
+    <meta name="theme-color" content="#183153" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0E2431" media="(prefers-color-scheme: dark)">
 
     <!-- Logo Schema for Search Results -->
     <script type="application/ld+json">
@@ -240,6 +259,8 @@
         .text-two {
             line-height: 1.1;
         }
+
+        h1 { font-size: 2rem; }
     </style>
 
     <!-- Preload critical resources -->
@@ -260,34 +281,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap&text=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,!?@">
     </noscript>
 
-    <!-- Load Font Awesome with optimization -->
-    <style>
-        /* Font Awesome optimization */
-        @font-face {
-            font-family: 'Font Awesome 5 Free';
-            font-style: normal;
-            font-weight: 900;
-            font-display: swap;
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/webfonts/fa-solid-900.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Font Awesome 5 Brands';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/webfonts/fa-brands-400.woff2') format('woff2');
-        }
-        .fas {
-            font-family: 'Font Awesome 5 Free';
-            font-weight: 900;
-        }
-        .fab {
-            font-family: 'Font Awesome 5 Brands';
-            font-weight: 400;
-        }
-    </style>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Optimized Font Awesome Loading -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="print" onload="this.media='all'" crossorigin="anonymous">
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="stylesheet.css" media="print" onload="this.media='all'">
@@ -469,7 +466,7 @@
                 <div class="text-two">I'm Sujjal Khadka</div>
                 <ul class="text-three">
                     <li><span>Developer</span></li>
-                    <li><span>Student</span></li>
+                    <li><span>Student</span></li>https://48053f97ea77.ngrok-free.app/
                 </ul>
                 <div class="text-four">From Nepal</div>
             </div>
@@ -677,9 +674,6 @@
             });
         }
     </script>
-    
-    <!-- Cloudflare email protection script loaded last with defer -->
-    <script defer src="/cdn-cgi/scripts/cloudflare-static/email-decode.min.js"></script>
 </body>
 
 </html>
