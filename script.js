@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             // Create mailto link with static subject
-            const mailtoLink = `mailto:info@sujjalkhadka.com.np?subject=${encodeURIComponent(staticSubject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+            const mailtoLink = `mailto:sujjalboi09@gmail.com?subject=${encodeURIComponent(staticSubject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
 
             // Add loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening Email...';
